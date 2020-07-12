@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221C522E24BB9A4A00495940 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C522D24BB9A4A00495940 /* Person.swift */; };
 		22A27BAB24B8ECAD00C20EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A27BAA24B8ECAD00C20EF7 /* AppDelegate.swift */; };
 		22A27BAD24B8ECAD00C20EF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A27BAC24B8ECAD00C20EF7 /* SceneDelegate.swift */; };
 		22A27BAF24B8ECAD00C20EF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A27BAE24B8ECAD00C20EF7 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221C522D24BB9A4A00495940 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		22A27BA724B8ECAD00C20EF7 /* Project_10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A27BAA24B8ECAD00C20EF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22A27BAC24B8ECAD00C20EF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				22A27BAA24B8ECAD00C20EF7 /* AppDelegate.swift */,
+				221C522D24BB9A4A00495940 /* Person.swift */,
 				22A27BAC24B8ECAD00C20EF7 /* SceneDelegate.swift */,
 				22A27BC024B8F5F500C20EF7 /* PersonCell.swift */,
 				22A27BAE24B8ECAD00C20EF7 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221C522E24BB9A4A00495940 /* Person.swift in Sources */,
 				22A27BAF24B8ECAD00C20EF7 /* ViewController.swift in Sources */,
 				22A27BAB24B8ECAD00C20EF7 /* AppDelegate.swift in Sources */,
 				22A27BC124B8F5F500C20EF7 /* PersonCell.swift in Sources */,
