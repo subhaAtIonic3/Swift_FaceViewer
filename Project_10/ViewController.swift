@@ -24,6 +24,12 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     @objc func addNewPerson() {
         let picker = UIImagePickerController()
         
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
         picker.allowsEditing = true
         picker.delegate = self
         
@@ -59,15 +65,28 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let person = people[indexPath.item]
 
-        let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
-        ac.addTextField()
+        let editAc = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
+        editAc.addTextField()
 
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        editAc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
-        ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
-            guard let newName = ac?.textFields?[0].text else { return }
+        editAc.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak editAc] _ in
+            guard let newName = editAc?.textFields?[0].text else { return }
             person.name = newName
 
+            self?.collectionView.reloadData()
+        })
+        
+        let ac = UIAlertController(title: "Rename the person or delete?", message: nil, preferredStyle: .actionSheet)
+        
+        ac.addAction(UIAlertAction(title: "Rename", style: .default) { [weak self] _ in
+            self?.present(editAc, animated: true)
+        })
+        ac.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.collectionView.performBatchUpdates({
+                self?.collectionView.deleteItems(at: [indexPath])
+                self?.people.remove(at: indexPath.item)
+            })
             self?.collectionView.reloadData()
         })
 
